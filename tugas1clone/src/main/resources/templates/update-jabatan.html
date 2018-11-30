@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	
+	<title>Data Pegawai</title>
+	
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	
+	<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+
+</head>
+
+<body>
+
+		<nav th:replace="fragments/fragment :: navbar"></nav>
+
+		<br>
+		<div class="container-fluid">
+	
+				<div class="row">
+				<div class="col-md-6">
+					<div class="card">
+					    <div class="card-header text-white" style="background-color: #00AA9E;">						
+ 						<h4 th:text="'Form Update Kepanitiaan'"></h4>
+						</div>
+						<form th:action="@{/jabatan/ubah/submit}" th:object="${jabatan}" method="POST">
+						<table class="table table-striped">
+							
+							<tr>
+								<td>
+								</td>
+								<td>
+								<input type="hidden" th:value="${jabatan.id}" name="id"></input>
+								
+								</td>
+
+							</tr>
+							<tr>
+								<td>
+Nama								
+								</td>
+								<td>
+											<input type="text" th:value="${jabatan.nama}" name="nama" class="form-control" id="nama" />
+								
+								</td>
+							</tr>
+							<tr>
+								<td>
+Organisasi							
+								</td>
+								<td>
+									<input type="text" th:value="${jabatan.deskripsi}" name="organisasi" class="form-control" id="deskripsi" />
+								
+								</td>
+							</tr>
+							<tr>
+								<td>
+Email							
+								</td>
+								<td>
+									<input type="text" th:value="${jabatan.deskripsi}" name="email" class="form-control" id="deskripsi" />
+								
+								</td>
+							</tr>
+							<tr>
+								<td>
+Website							
+								</td>
+								<td>
+									<input type="text" th:value="${jabatan.deskripsi}" name="website" class="form-control" id="deskripsi" />
+								
+								</td>
+							</tr>
+							<tr>
+								<td>
+Kontak CP							
+								</td>
+								<td>
+									<input type="text" th:value="${jabatan.deskripsi}" name="kontakcp" class="form-control" id="deskripsi" />
+								
+								</td>
+							</tr>
+							<tr>
+								<td>
+Kategori							
+								</td>
+								<td>
+									<input type="text" th:value="${jabatan.deskripsi}" name="kategori" class="form-control" id="deskripsi" />
+								
+								</td>
+							</tr>
+							<tr>
+								<td>
+Logo							
+								</td>
+								<td>
+									<input type="text" th:value="${jabatan.deskripsi}" name="logo" class="form-control" id="deskripsi" />
+								
+								</td>
+							</tr>
+							<tr>
+								<td>
+Deskripsi	
+								</td>
+								<td>
+									<input type="text" th:value="${jabatan.deskripsi}" name="deskripsi" class="form-control" id="deskripsi" />
+								
+								</td>
+							</tr>
+							
+							<tr>
+							<td>
+							</td>
+							<td>
+								<button type="submit" class="btn btn-primary mb-2">Update</button>
+							
+							</td>
+							
+							</tr>
+						</table>
+																					
+							
+			
+							
+						</form>
+						
+					</div>
+				</div>
+				</div>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+	</body>
+</html>
+
+
+

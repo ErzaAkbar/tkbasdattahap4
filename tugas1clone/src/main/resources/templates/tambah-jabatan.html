@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	
+	<title>Home</title>
+	
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	
+	<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+
+</head>
+
+<body>
+
+		<nav th:replace="fragments/fragment :: navbar"></nav>
+
+		<br>
+		<div class="container-fluid">
+			<h3>Sistem Informasi Kepegawaian</h3>
+			<h6>Selamat datang di Sistem Informasi Kepegawaian Next Generation v3.2</h6>
+		<hr>
+		<h5>Form Tambah Kepanitiaan</h5>
+		
+				<div class="row">
+				<div class="col-md-6">
+					<div class="card">
+					    <div class="card-header text-white" style="background-color: #00AA9E;">						
+						<a>Masukan Input Data Kepanitiaan Baru
+						</div>
+						
+						<form th:action="@{/jabatan/add}" th:object="${jabatan}" method="POST">
+					
+							
+							<table class="table table-striped">
+								<tr>
+									<td>Nama Kepanitiaan</td>
+									<td>
+							<input type="text" name="nama" />
+									
+									</td>
+								</tr>
+								<tr>
+									<td>Organisasi Yang Membawahi</td>
+									<td>
+									
+								<select name = "idJabatan">
+										<option th:value = "tess" th:text = "Fasilkom"></option>
+										<option th:value = "tess" th:text = "FTeknik"></option>
+										<option th:value = "tess" th:text = "FKedokteran"></option>
+										<option th:value = "tess" th:text = "FHukum"></option>
+										<option th:value = "tess" th:text = "FFarmasi"></option>
+										<option th:value = "tess" th:text = "FIlmuBudaya"></option>
+
+										</select>
+
+
+
+									</td>
+								</tr>
+								<select name = "idJabatan">
+										<option th:each = "jabatan : ${daftarJabatan}" th:value = "${jabatan.id}" th:text = "${jabatan.nama}"></option>
+										</select>
+								<tr>
+									<td>Email</td>
+									<td>
+							<input type="text" name="email" />
+									
+									</td>
+								</tr>
+								<tr>
+									<td>Website</td>
+									<td>
+							<input type="text" name="Website" />
+									
+									</td>
+								</tr>
+								<tr>
+									<td>Kontak CP</td>
+									<td>
+							<input type="text" name="contactcp" />
+									
+									</td>
+								</tr>
+								<tr>
+									<td>Kategori</td>
+									<td>
+									
+								<select name = "idJabatan">
+										<option th:value = "tess" th:text = "Lomba"></option>
+										<option th:value = "tess" th:text = "Seminar"></option>
+										<option th:value = "tess" th:text = "Workshop"></option>
+										<option th:value = "tess" th:text = "Training"></option>
+										<option th:value = "tess" th:text = "Vlog"></option>
+										<option th:value = "tess" th:text = "Olim"></option>
+
+										</select>
+
+
+
+									</td>
+								</tr>
+								<tr>
+									<td>Logo</td>
+									<td>
+							<input type="text" name="logo" />
+									
+									</td>
+								</tr>
+								<tr>
+									<td>Deskripsi</td>
+									<td>
+							<input type="text" name="deskripsi" />
+									
+									</td>
+								</tr>
+								
+							
+							</table>
+							<div align="center">
+							<button type="submit" class="btn btn-danger btn-lg">Submit</button>
+							</div>
+							<br>
+							
+						</form>
+						
+					</div>
+				</div>
+				</div>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+	</body>
+</html>
+
+
+
